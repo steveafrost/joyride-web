@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import About from './pages/About';
+import routes from './routes';
 
 const AppContainer = styled.div``;
 
@@ -19,13 +17,7 @@ class App extends Component {
             <Router>
                 <AppContainer>
                     <Header />
-                    <Main>
-                        <div>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/about" component={About} />
-                            <Route path="/contact" component={Contact} />
-                        </div>
-                    </Main>
+                    <Main>{routes}</Main>
                     <Footer />
                 </AppContainer>
             </Router>
