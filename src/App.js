@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 import routes from './routes';
-import baseStyles from './baseStyles';
 import Navigation from './components/layout/Navigation';
+import './css/reset.css';
 
 const AppContainer = styled.div`
     display: flex;
@@ -19,20 +19,16 @@ const Main = styled.main`
 
 const Footer = styled.footer``;
 
-const App = () => {
-    baseStyles();
-
-    return (
-        <Router>
-            <AppContainer>
-                <Header>
-                    <Navigation />
-                </Header>
-                <Main>{routes}</Main>
-                <Footer>hey</Footer>
-            </AppContainer>
-        </Router>
-    );
-};
+const App = () => (
+    <Router>
+        <AppContainer>
+            <Header>
+                <Navigation />
+            </Header>
+            <Main>{routes}</Main>
+            <Footer>hey</Footer>
+        </AppContainer>
+    </Router>
+);
 
 export default App;
